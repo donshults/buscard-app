@@ -1,0 +1,16 @@
+[
+    {
+        "id":1,
+        "businessOwner":"Jason Stein",
+        "eMailAddress" : "Jason@JasonStein.com",
+        "mobilePhone" : "(503)555-1212",
+        "videoUrl" : "http://lp.collaborationsecrets.com/video/jasonstein/JasonStein.mp4"
+    },
+    {
+        "id":2,
+        "businessOwner":"Don Shults",
+        "eMailAddress" : "Don@CollaborationSecrets.com",
+        "mobilePhone" : "(503)484-4127",
+        "videoUrl" : "http://lp.collaborationsecrets.com/video/jasonstein/JasonStein.mp4"
+    }
+]

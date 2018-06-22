@@ -1,15 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ReactPlayer from 'react-player';
-import './videoplayer.css';
+import './Videoplayer.css';
 
-class  VideoPlayer extends Component {
-  render () {
-    
+const VideoPlayer = (props) => {
+    console.log(props.vidUrl)
     return (
         <div className='player-wrapper'>
         <ReactPlayer
           className='react-player'
-          url={['http://lp.collaborationsecrets.com.s3-us-west-2.amazonaws.com/video/jasonstein/JasonStein.mp4']}
+          url={props.vidUrl}
           width='100%'
           height='100%'
           muted
@@ -18,8 +17,6 @@ class  VideoPlayer extends Component {
         />
       </div>
     )
-  }
-
 }
 
 export default VideoPlayer;

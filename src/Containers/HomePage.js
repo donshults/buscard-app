@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import Header from '../header';
-import MainContent from '../main-content';
-import Footer from '../footer/footer'
-import './homepage.css';
-import Dummy from '../dummy/dummy';
+import Header from '../Components/Header/Header';
+import MainContent from '../Components/MainContent/MainContent';
+import Footer from '../Components/Footer/Footer'
+import './Homepage.css';
 
 class HomePage extends Component {
   constructor(props) {
-    super(props);
-    
+    super(props);    
   }
-  state = {};
+
+  state = {
+    featuredContact: {id:1,businessOwner:"Don"}
+  };
+
   componentDidMount() {
     this.fetchContacts();
   }
@@ -20,27 +22,26 @@ class HomePage extends Component {
       .then(rsp => rsp.json())
       .then(allContacts => {
         this.allContacts = allContacts;
-        this.setInitialContact();
+        this.setInitialContact(this.allContacts);     
       });
   }
 
   setInitialContact = () => {
     if (this.allContacts) {
       //ToDo: make the selection dynamic
-      const featuredContact = this.allContacts[0];
-      this.setState({ featuredContact });
+      const contact = this.allContacts[0];
+      this.setState( {featuredContact: contact} );
     }
-  };
+  }
+
   render() {
-    if (this.state.featuredContact) {
-      console.log("in render " + this.state.featuredContact.id);
-    }
-    let crap = "990";
+
+    console.log("in render " + this.state.featuredContact.businessOwner);
+
     return (
       <div className="homePage">
         <Header />
-        <Dummy test={crap} />
-        <MainContent contact={this.state.featuredContact} />
+        <MainContent featuredContact={this.state.featuredContact} />
         <Footer />
       </div>
     )

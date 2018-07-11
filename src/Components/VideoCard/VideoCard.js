@@ -7,21 +7,25 @@ const subTitleStyle = {
 };
 
 const VideoCard = (props) => {
-     console.log("VideoCard "+ props)
-     return (
-       <div>
-        <Card>
-        <VideoPlayer vidUrl={props.mycontact.videoUrl} />
-          <CardBody>
-            <CardTitle>{props.mycontact.businessOwner}</CardTitle>
-            <CardSubtitle style={subTitleStyle}>{props.mycontact.eMailAddress }</CardSubtitle>
-            <CardSubtitle style={subTitleStyle}>{props.mycontact.mobilePhone}</CardSubtitle>
-            <Button>Button</Button>
-          </CardBody>
-        </Card>
-      </div>
-
+  var videoCard = null;
+  if (props.mycontact) {
+    videoCard = (<Card>
+      <VideoPlayer vidUrl={props.mycontact.videoUrl} />
+      <CardBody>
+        <CardTitle>{props.mycontact.businessOwner}</CardTitle>
+        <CardSubtitle style={subTitleStyle}>{props.mycontact.eMailAddress}</CardSubtitle>
+        <CardSubtitle style={subTitleStyle}>{props.mycontact.mobilePhone}</CardSubtitle>
+        <Button>Button</Button>
+      </CardBody>
+    </Card>
     )
+  }
+  return (
+    <div data-test='videocard-component'>
+      {videoCard}
+    </div>
+
+  )
 
 }
 

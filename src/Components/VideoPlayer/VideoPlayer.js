@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player';
 import './Videoplayer.css';
 
 const VideoPlayer = (props) => {
-    console.log(props.vidUrl)
+   
     return (
         <div className='player-wrapper'>
         <ReactPlayer
